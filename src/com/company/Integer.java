@@ -7,14 +7,18 @@ import java.util.List;
 
 public class Integer {
     public static void main(String[] args) {
+        //int与Integer的区别
         String str=new String("str");
         java.lang.Integer a =new java.lang.Integer(3);
         java.lang.Integer b=4;
-        int c=5;
+        java.lang.Integer d=4;
+        int c=3;
+        System.out.println(a==c);
+        System.out.println(b==d);
         System.out.println(str);
         System.out.println(a);
         System.out.println(a==b);
-        System.out.println(a==c);
+
         //编码字符的操作
         translate("Hello");
         //自动装箱拆箱
@@ -27,13 +31,6 @@ public class Integer {
         String tempStr=str;
         try {
             tempStr=new String(tempStr.getBytes("ISO-8859-1"),"GBK");
-     /*       Tomcat默认全部都是用ISO-8859-1编码,不管你页面用什么显示,Tomcat最终还是会替你将所有字符转做ISO-8859-1.
-            那么,当在另目标页面再用GBK翻译时就会将本来错的编码翻译成GBK的编码,这时的文字会乱码.所以需要先将得到”字符”
-            (不管是什么)都先用字节数组表示,且使用ISO-8859-1进行翻译,得到一个在ISO-8859-1编码环境下的字节数组.例如:
-            AB表示成[64,65].然后再用GBK编码这个数组,并翻译成一个字符串.那么我们可以得到一个编码转换的过程
-            假设:GBK码(“你”)->URLencode后变成->(%3F%2F)->Tomcat自动替你转一次ISO- 8859-1->得到
-                    ( 23 43 68 23 42 68 每一个符号表示为ISO-8859-1中的一个编码)->接收页面—>再转一次
-        为ISO-8859-1的Byte数组 [23,43,68,23,42,68]—>用GBK再转为可读的文字—>(%3F%2F”—->转为(“你”)*/
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -49,10 +46,13 @@ public class Integer {
     执行上面那句代码的时候，系统为我们执行了：
     int totalprim = total.intValue();*/
     public static void getInteger(int a){
-        java.lang.Integer number=100;
-        //自动拆箱
+        //自动装箱实际底层调用Integer的valueOf()方法，jdk1.5之后提供了自动装拆箱的功能,
+        // 定义的时候自动装箱Integer number=100;
+        java.lang.Integer number= java.lang.Integer.valueOf(100);
+        //自动拆箱，jdk1.5之后简化写int aaa=number;
         int aaa=number.intValue();
-        System.out.println(aaa);
+        System.out.println(number==aaa);//true,自动插箱成int型进行比较
+
         java.lang.Integer num1=100;
         java.lang.Integer num2= new java.lang.Integer(100);
         java.lang.Integer num3= java.lang.Integer.valueOf(100);
