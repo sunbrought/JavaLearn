@@ -1,6 +1,9 @@
 package com.company;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Integer {
     public static void main(String[] args) {
@@ -14,7 +17,10 @@ public class Integer {
         System.out.println(a==c);
         //编码字符的操作
         translate("Hello");
+        //自动装箱拆箱
         getInteger(1234);
+        //ArrayList与Array之间的转换
+        getArrayList();
     }
     //输出编码字符的操作
     public static String translate(String str){
@@ -56,6 +62,28 @@ public class Integer {
         System.out.println(num1==num2);
         //自动装箱
         System.out.println(num1==num3);
+    }
+    //Array和ArrayList的区别
+    public static void getArrayList(){
+        //把ArrayList转换为Array数组
+        List<String> list=new ArrayList<String>();
+        list.add("张三");
+        list.add("李四");
+        list.add("王五");
+        int size=list.size();
+        String[] array=(String[])list.toArray(new String[size]);
+        for(String i:array){
+            System.out.println("array中的值为："+i);
+        }
+        //把Array数组转换为ArrayList数组
+        String[] str=new String[3];
+        str[0]="A";
+        str[1]="B";
+        str[2]="C";
+        List<String> asList=Arrays.asList(str);
+        for(String i:asList){
+            System.out.println("ArrayList中的值为:"+i);
+        }
     }
 
 }
