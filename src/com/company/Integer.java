@@ -14,6 +14,7 @@ public class Integer {
         System.out.println(a==c);
         //编码字符的操作
         translate("Hello");
+        getInteger(1234);
     }
     //输出编码字符的操作
     public static String translate(String str){
@@ -34,4 +35,27 @@ public class Integer {
         System.out.println(tempStr);
         return tempStr;
     }
+    //自动装箱,自动装箱
+  /*  Integer total = 99;
+    执行上面那句代码的时候，系统为我们执行了：
+    Integer total = Integer.valueOf(99);
+    int totalprim = total;
+    执行上面那句代码的时候，系统为我们执行了：
+    int totalprim = total.intValue();*/
+    public static void getInteger(int a){
+        java.lang.Integer number=100;
+        //自动拆箱
+        int aaa=number.intValue();
+        System.out.println(aaa);
+        java.lang.Integer num1=100;
+        java.lang.Integer num2= new java.lang.Integer(100);
+        java.lang.Integer num3= java.lang.Integer.valueOf(100);
+        //num3调用toString()方法返回的是一个字符串类型的值
+        System.out.println(num1.toString().equals(num3.toString()));
+        //num1返回的是Integer类型的对象，num2返回的是String对象
+        System.out.println(num1==num2);
+        //自动装箱
+        System.out.println(num1==num3);
+    }
+
 }
