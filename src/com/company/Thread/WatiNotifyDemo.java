@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Thread;
 class Info {
     private String title;
     private String content;

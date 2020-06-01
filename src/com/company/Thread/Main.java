@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Thread;
 class MyThread implements Runnable{
     private int tickets =5;
     @Override

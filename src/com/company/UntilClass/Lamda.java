@@ -1,4 +1,4 @@
-package com.company;
+package com.company.UntilClass;
 
 interface MyInterface{
     void IMthod(String str);

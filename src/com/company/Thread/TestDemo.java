@@ -1,6 +1,4 @@
-package com.company;
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
+package com.company.Thread;
 
 class Message {
     private String title ;							// 保存信息的标题

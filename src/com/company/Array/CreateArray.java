@@ -1,4 +1,8 @@
-package com.company;
+package com.company.Array;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CreateArray {
 
@@ -6,6 +10,7 @@ public class CreateArray {
         getCreateArray1();
         getCreateArray2();
         getCreateArray3();
+        getArrayList();
     }
     public static void getCreateArray1(){
         //在声明的时候直接就已经分配空间，并赋值，不能写成先定义然后赋值
@@ -34,4 +39,27 @@ public class CreateArray {
             System.out.println(str1[x]);
         }
     }
+    //Array和ArrayList的区别
+    public static void getArrayList(){
+        //把ArrayList转换为Array数组
+        List<String> list=new ArrayList<String>();
+        list.add("张三");
+        list.add("李四");
+        list.add("王五");
+        int size=list.size();
+        String[] array=(String[])list.toArray(new String[size]);
+        for(String i:array){
+            System.out.println("array中的值为："+i);
+        }
+        //把Array数组转换为ArrayList数组
+        String[] str=new String[3];
+        str[0]="A";
+        str[1]="B";
+        str[2]="C";
+        List<String> asList= Arrays.asList(str);
+        for(String i:asList){
+            System.out.println("ArrayList中的值为:"+i);
+        }
+    }
+
 }

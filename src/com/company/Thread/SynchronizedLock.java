@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Thread;
 //
 class A{
     public synchronized void say(B b){
