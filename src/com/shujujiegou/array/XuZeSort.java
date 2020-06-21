@@ -19,15 +19,15 @@ public class XuZeSort {
             // 就是此趟内最小的元素的下标，避免每次遇到较小元素都要进行交换。
             for(int j=i+1;j<arrays.length;j++){
                 System.out.print("排序的次数："+j+"--");
-                if(arrays[j]<arrays[min]){
+                 if(arrays[j]<arrays[min]){
                     min=j;
                 }
-                if(i!=min){
-                    int temp;
-                    temp=arrays[i];
-                    arrays[i]=arrays[min];
-                    arrays[min]=temp;
-                }
+            }
+            if(i!=min){
+                int temp;
+                temp=arrays[i];
+                arrays[i]=arrays[min];
+                arrays[min]=temp;
             }
         }
         System.out.println("排序后的数字：");
